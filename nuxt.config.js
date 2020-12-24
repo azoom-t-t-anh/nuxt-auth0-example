@@ -18,6 +18,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/element-ui'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -36,8 +37,14 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
-
+  axios: {
+    // baseURL: process.env.API_URL || 'http://localhost:8002'
+    proxy: true
+  },
+  proxy: {
+    '/endpoint-api': { target: process.env.ENDPOINT_URL, pathRewrite: { '^/endpoint-api': '/' } },
+    '/cloud-endpoint/token': process.env.API_URL || 'http://localhost:8002'
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }

@@ -59,4 +59,18 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+.el-notification__content {
+  text-align: left !important;
+  text-overflow: ellipsis !important;
+}
+.el-notification__content p {
+  text-overflow: ellipsis !important;
+  width: 98% !important;
+  overflow: hidden !important;
+}
+
+.el-notification__group {
+  width: 100% !important;
+}
 </style>
